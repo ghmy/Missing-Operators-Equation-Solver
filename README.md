@@ -9,4 +9,4 @@ For example, let's say we have calculated:
 and the next operand would be * instead of - between 8 and 9 so the algorithm will calculate
 12 * 34 + 5 - 6*7 + 8 * 9
 However, instead of calculating whole string again, we can hold the result for up to last + and - operators 
-which would be 12 * 34 + 5 - 6*7 and calculate the rest of the string as 8 * 9 and add the results. 
+which would be 12 * 34 + 5 - 67 and calculate the rest of the string as 8 * 9 and add the results. 
