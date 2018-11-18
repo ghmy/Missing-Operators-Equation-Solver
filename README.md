@@ -1,4 +1,4 @@
-# OneToNineEquality
+# Missing Operators Equation Solver
 Using 123456789 string and putting +, -, * and / operations between the digits, algorithm tries to find all the solutions to given number. 
 Concatenation is also a valid operation. However, paranthesis is not considered in this algorithm. 
 I ran the algorithm and its fast enough to show results, but there is still a room for optimization. 
