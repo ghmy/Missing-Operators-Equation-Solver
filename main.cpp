@@ -8,7 +8,7 @@ using namespace std;
 #define NUM 8
 
 // Finds equalities where the given number can be obtained
-// Using 1 to 9 and +-*/ signs
+// Using 1 to 9 and +-*/() signs
 // 1-2+3+4*567*8/9=2018
 // 1-2+3/4*5*67*8+9=2018
 // 1*2345-6*7*8+9=2018
@@ -16,16 +16,16 @@ using namespace std;
 
 bool isEqual(bool reverse, int ops[], int result)
 {
-    int nums[NUM + 1];
+    float nums[NUM + 1];
     int index = 0;
     int digits = 0;
     int slide;
     int i = 0;
     int opsLength = NUM;
     bool mulDivBegin; // is multiplication & division operations begin
-    int mul;
-    int div;
-    int res;
+    float mul;
+    float div;
+    float res;
 
     int lOps[opsLength]; // Local copy of ops
 
@@ -61,7 +61,7 @@ bool isEqual(bool reverse, int ops[], int result)
                     nums[j - digits + 1] = nums[j + 1];
                 }
                 opsLength = opsLength - digits;
-                i = index;  
+                i = index;
             }
             index = i + 1;
             digits = 0;
@@ -118,10 +118,7 @@ bool isEqual(bool reverse, int ops[], int result)
             ++i;
         }
 
-        if(mul % div != 0)  // Division results in a floating point number, we are working with integers
-            return false;
-
-        nums[index] = mul / div;
+        nums[index] = (float)mul / (float)div;
 
         for(int j = index; j < opsLength; ++j)
         {
@@ -211,6 +208,7 @@ list<string> solve(bool reverse, int result)
 
 int main()
 {
+
     int dest;
     cout << "Enter destination number : " << endl;
     cin >> dest;
