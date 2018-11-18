@@ -1,7 +1,7 @@
 # Missing Operators Equation Solver
 Using 123456789 string and putting +, -, * and / operations between the digits, algorithm tries to find all the solutions to given number. 
 Concatenation is also a valid operation. However, paranthesis is not considered in this algorithm. 
-I ran the algorithm and its fast enough to show results, but there is still a room for optimization. 
+I ran the algorithm and its fast enough to show results (on Linux Mint 19 with QtCreator), but there is still a room for optimization. 
 One can hold the result for up to last + or - sign in the solve function and calculate for the rest of
 the string. 
 For example, let's say we have calculated:
