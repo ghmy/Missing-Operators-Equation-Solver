@@ -61,7 +61,7 @@ bool isEqual(bool reverse, int ops[], int result)
                     nums[j - digits + 1] = nums[j + 1];
                 }
                 opsLength = opsLength - digits;
-                i = slide - 2;  // With ++i it will become slide - 1
+                i = index;  
             }
             index = i + 1;
             digits = 0;
