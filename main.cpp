@@ -8,7 +8,7 @@ using namespace std;
 #define NUM 8
 
 // Finds equalities where the given number can be obtained
-// Using 1 to 9 and +-*/() signs
+// Using 1 to 9 and +-*/ signs
 // 1-2+3+4*567*8/9=2018
 // 1-2+3/4*5*67*8+9=2018
 // 1*2345-6*7*8+9=2018
