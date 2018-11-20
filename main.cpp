@@ -8,13 +8,13 @@ using namespace std;
 #define NUM 8
 
 // Finds equalities where the given number can be obtained
-// Using 1 to 9 and +-*/() signs
+// Using 1 to 9 and +-*/ signs
 // 1-2+3+4*567*8/9=2018
 // 1-2+3/4*5*67*8+9=2018
 // 1*2345-6*7*8+9=2018
 // 12*34*5+67-89=2018
 
-bool isEqual(bool reverse, int ops[], int result)
+float getResult(bool reverse, int ops[])
 {
     float nums[NUM + 1];
     int index = 0;
@@ -141,8 +141,7 @@ bool isEqual(bool reverse, int ops[], int result)
         else
             res -= nums[i + 1];
     }
-
-    return res == result;
+    return res;
 }
 
 string makeString(bool reverse, int ops[], int number)
@@ -180,13 +179,16 @@ list<string> solve(bool reverse, int result)
 
     int ops[NUM];
     memset(ops, 0, NUM * sizeof(ops[0]));  // Operation begin with concatenation
-    int index = NUM - 1;
+
+    int index;
 
     // All possible operations are considered starting from the last
     // Operand to first operand
     while(true)
-    {        
-        if(isEqual(reverse, ops, result))
+    {
+        index = NUM - 1;
+
+        if( getResult(reverse, ops) == result )
             solutions.push_back(makeString(reverse, ops, result));
 
         while(ops[index] == OPS - 1) --index;
@@ -202,7 +204,6 @@ list<string> solve(bool reverse, int result)
             ops[index] = 0;
             ++index;
         }
-        index = NUM - 1;
     }
 }
 
