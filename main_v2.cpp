@@ -150,7 +150,7 @@ float getResult(bool reverse, int ops[])
 
     // Step 3 - addition & subtraction operations
 
-    if(reInitLatestPlusMinusIndex != -1) // Calculating from beginning
+    if(latestPlusMinusIndex == -1) // Calculating from beginning
     {
         latestPlusMinusIndex = reInitLatestPlusMinusIndex;
         res = nums[0];
